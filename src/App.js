@@ -1,16 +1,17 @@
-// import logo from './logo.svg';
+import { Component, Fragment} from 'react';
 import './App.css';
-import Greeting from './Components';
-const user = {
-  name: 'John',
-  surname: 'Fox'
-};
 
+import Hello from './Components/Hello';
+import HelloClass from './Components/HelloClass';
 
-function App() {
+function App(){
   return (
-    <Greeting userName={user.name} userSurname={user.surname}/>
+    <>
+      <Hello usName={'Vasya'} usSurname={'Pupkin'}/>
+      <Hello usName={'Vasya'} usSurname={'Pupkin'}/>
+      <Hello usName={'Vasya'} usSurname={'Pupkin'}/>
+      <HelloClass usName={'Peter'} usSurname={"o'Kin"}/>
+    </>
   );
 }
-
 export default App;
