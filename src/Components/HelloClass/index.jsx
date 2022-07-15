@@ -4,12 +4,12 @@ export default class HelloClass extends Component {
   constructor(props){
     super(props);
   }
-
   render() {
-    const {usName, usSurname} = this.props;
+  const {name, surname} = this.props;
+
     return (
       <>
-        <p>Hello, {usName} {usSurname}</p>
+        <p>Hello, {name} {surname}</p>
       </>
     )
   }
