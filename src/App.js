@@ -1,6 +1,6 @@
 import { Component, Fragment} from 'react';
 import './App.css';
-import HelloClass from './Components/HelloClass'; 
+import Counter from './Components/Counter';
 
 export default class App extends Component{
   constructor(props){
@@ -10,8 +10,7 @@ export default class App extends Component{
   render(){
     return(
       <>
-        <HelloClass name={"Vasya"} surname={"Ivanov"} isHelloMode={true}/>
-        <HelloClass name={"Tom"} surname={"Fox"} isHelloMode={false}/>
+        <Counter step={1}/>
       </>
     )
   }
