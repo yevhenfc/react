@@ -5,7 +5,6 @@ export default class Counter extends Component {
     super(props)
       this.state = {
       value: 0,
-      step: 1,
     }
   }
 
@@ -14,20 +13,16 @@ export default class Counter extends Component {
   }
 
   inc = () =>{
-    const {value, step} = this.state;
+    const {value} = this.state;
+    const {step} = this.props;
     this.setState({value: value + step});
    }
 
   dec = () =>{
-    const {value, step} = this.state;
+    const {value} = this.state;
+    const {step} = this.props;
     if (value <= 0) {alert('error')}
     else {this.setState({value: value - step})};
-  }
-
-  add1ToStep = () => {
-    const {step} = this.state;
-    this.setState({step: step + 1});
-    console.log(step);
   }
 
    render() {
@@ -36,7 +31,6 @@ export default class Counter extends Component {
         <h2>Counter {this.state.value}</h2>
         <button onClick={this.inc}> + </button>
         <button onClick={this.dec}> - </button>
-        <button onClick={this.add1ToStep}> step+1</button>
         <button onClick = {this.sayHello}> sayHello </button>
       </>
     )

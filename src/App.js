@@ -10,7 +10,7 @@ export default class App extends Component{
   render(){
     return(
       <>
-        <Counter step={1}/>
+        <Counter step={2}/>
       </>
     )
   }
