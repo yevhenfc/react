@@ -25,11 +25,12 @@ export default class HelloClass extends Component {
   } 
 
   render() {
-  const {name, surname} = this.props;
-  this.changeMode();  
-    return (
+  const {name, surname, isHelloMode} = this.props;
+  return (
       <>
-        <p>{this.state.msg}, {name} {surname}</p>
+        <p>{isHelloMode ? 'Hello' : 'Bye'}
+        , {name} {surname
+          }</p>
       </>
     )
   }
