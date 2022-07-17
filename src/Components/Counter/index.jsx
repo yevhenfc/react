@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import InnerCounter from '../InnerCounter'
 
 export default class Counter extends Component {
   constructor(props) {
@@ -6,10 +7,6 @@ export default class Counter extends Component {
       this.state = {
       value: 0,
     }
-  }
-
-  sayHello = () => {
-    alert(this.state.value);
   }
 
   inc = () =>{
@@ -25,13 +22,21 @@ export default class Counter extends Component {
     else {this.setState({value: value - step})};
   }
 
-   render() {
+  NewValueHandler = (newValue) => {
+    this.setState({value: newValue});
+  }
+
+  render() {
+    const {value} = this.state;
     return (
       <>
         <h2>Counter {this.state.value}</h2>
         <button onClick={this.inc}> + </button>
         <button onClick={this.dec}> - </button>
-        <button onClick = {this.sayHello}> sayHello </button>
+        <InnerCounter 
+          value={this.state.value}
+          NewValueHandler = {this.NewValueHandler}
+        />
       </>
     )
   }

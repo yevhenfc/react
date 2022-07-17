@@ -1,5 +1,6 @@
 import React, { Component} from 'react';
-import User from './Components/User';
+import User  from './Components/User';
+import Counter from './Components/Counter';
 
 export default class App extends Component{
   constructor(props) {
@@ -21,6 +22,8 @@ export default class App extends Component{
   render() {
     const {name, surname, age, isSelected} = this.state;
     return (
+      <>
+      <Counter step={1} />
       <User 
         name       = {name}
         surname    = {surname}
@@ -28,6 +31,7 @@ export default class App extends Component{
         isSelected = {isSelected}
         selectHandler = {this.selectHandler}
       />
+      </>
     )
   }
 }
