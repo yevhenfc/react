@@ -15,7 +15,7 @@ export default class App extends Component{
   
   selectHandler = () => {
     const {isSelected} = this.state;
-    this.setState = ({isSelected: !isSelected});
+    this.setState ({isSelected: !isSelected});
   }
 
   render() {
