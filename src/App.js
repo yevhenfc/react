@@ -1,16 +1,24 @@
 import { Component, Fragment} from 'react';
 import './App.css';
-import Counter from './Components/Counter';
+import Card from './Components/Card';
+import User from './Components/User';
 
 export default class App extends Component{
-  constructor(props){
-    super(props);
-    };
+  // constructor(props){
+  //   super(props);
+  //   this.state = {
+  //     user: {
+  //       name: "Jeka",
+  //       email: "3@#",
+  //       imgSrc: '#',
+  //     }
+  //   }  
+  // };
   
   render(){
     return(
       <>
-        <Counter step={2}/>
+        <User />
       </>
     )
   }
