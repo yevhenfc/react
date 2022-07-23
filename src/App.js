@@ -1,14 +1,10 @@
 import React from 'react';
-// import User  from './Components/User';
-// import Counter from './Components/Counter';
-import UserList from './Components/UserList';
-import CarList from './Components/CarList';
+import UsersPage from './Components/UsersPage';
 
 export default function App() {
   return (
-   <>
-    <UserList />
-    <CarList />
+    <>
+      <UsersPage />
     </>
   )
 }
