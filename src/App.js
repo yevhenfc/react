@@ -1,45 +1,41 @@
-import React from 'react';
-import UsersPage from './Components/UsersPage';
+import React, { Component } from 'react';
+// import UsersPage from './Components/UsersPage';
 
-export default function App() {
-  return (
-    <>
-      <UsersPage />
-    </>
-  )
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      x: 0,
+    }
+    console.log('constructor', this.state.x);
+  }
+
+  componentDidMount(){
+    console.log('componentDidMount', this.state.x)
+  };
+
+  componentDidUpdate(prevProps, prevState){
+    console.log('componentDidUpdate', this.state.x)    
+  };
+
+  componentWillUnmount(){
+    console.log('componentWillUnmount', this.state.x)    
+  };
+
+  inc = () => {
+    this.setState({x : this.state.x + 1});
+    console.log('income function', this.state.x) 
+  };
+
+  render(){
+    console.log('render', this.state.x) 
+    return (
+      <div>
+        <h1>State X = {this.state.x}</h1>
+        <button onClick={this.inc}>+</button>
+      </div>
+    )   
+  }
 }
 
 
-// export default class App extends Component{
-//   constructor(props) {
-//     super(props)
-  
-//     this.state = {
-//        name: 'Tom',
-//        surname: 'Fox',
-//        age: 20,
-//        isSelected: false,
-//     }
-//   }
-  
-//   selectHandler = () => {
-//     const {isSelected} = this.state;
-//     this.setState ({isSelected: !isSelected});
-//   }
-
-//   render() {
-//     const {name, surname, age, isSelected} = this.state;
-//     return (
-//       <>
-//       <Counter step={1} />
-//       <User 
-//         name       = {name}
-//         surname    = {surname}
-//         age        = {age}
-//         isSelected = {isSelected}
-//         selectHandler = {this.selectHandler}
-//       />
-//       </>
-//     )
-//   }
-// }
