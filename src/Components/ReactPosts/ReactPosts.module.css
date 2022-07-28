@@ -1,0 +1,10 @@
+.post_conteiner{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.post_container > h2{
+    color: red;
+}

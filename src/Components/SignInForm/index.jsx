@@ -6,22 +6,25 @@ export default class SignInForm extends Component {
     super(props)
   
     this.state = {
-       userEmail: '',
-       userPassword: '',
+       height: '',
+       width: '',
     }
   }
 
-  setEmail     = (e) => {this.setState({userEmail: e.target.value})};
-  setPassword  = (e) => {this.setState({userPassword: e.target.value})};
+  setHeight = (e) => {this.setState({height: e.target.value})};
+  setWidth  = (e) => {this.setState({width: e.target.value})};
   handleSubmit = (e) => {e.preventDefault()};
 
   render() {
-    const{userEmail, userPassword} = this.state;
+    const{height, width} = this.state;
     return (
       <form onSubmit={this.handleSubmit}>
-        <input type="email"    value={userEmail}    onChange={this.setEmail}    placeholder='email'   ></input>
-        <input type="password" value={userPassword} onChange={this.setPassword} placeholder='password'></input>
+        <input type="text" value={height}    onChange={this.setHeight}    placeholder='height'   ></input>
+        <input type="text" value={width} onChange={this.setWidth} placeholder='width'></input>
         <button type="submit">Ok</button>
+        <div style={`border: '1px solid black', height: ${height}px, width=${width}px`}>
+
+        </div>
       </form>
     )
   }
