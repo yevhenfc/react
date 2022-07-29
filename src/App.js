@@ -4,7 +4,8 @@ import React, { Component } from 'react'
 // import Clock from './Components/Clock'
 // import SignInForm from './Components/SignInForm'
 // import ReactPosts from './Components/ReactPosts'
-import CounterFun from './Components/CounterFun'
+// import CounterFun from './Components/CounterFun'
+import ClockFun from './Components/ClockFun'
 
 // const testUser = {
 //   id: 1,
@@ -16,8 +17,8 @@ export default class App extends Component {
   render() {
     return (
       <>
-  
-        <CounterFun step={5}/>
+ 
+        <ClockFun />
       </>
     )
   }
