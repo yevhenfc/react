@@ -3,7 +3,8 @@ import React, { Component } from 'react'
 // import Card from './Components/Card'
 // import Clock from './Components/Clock'
 // import SignInForm from './Components/SignInForm'
-import ReactPosts from './Components/ReactPosts'
+// import ReactPosts from './Components/ReactPosts'
+import CounterFun from './Components/CounterFun'
 
 // const testUser = {
 //   id: 1,
@@ -15,8 +16,8 @@ export default class App extends Component {
   render() {
     return (
       <>
-        
-        <ReactPosts />
+  
+        <CounterFun step={5}/>
       </>
     )
   }
