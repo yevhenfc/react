@@ -7,15 +7,16 @@ const db = [
   {head: 'qwerty', content: 'yuiop'},
   {head: 'asdfg', content: 'ghjkl'},
   {head: 'zxcvb', content: 'cvbnm'},
-]
+];
 
 export default class ReactPosts extends Component {
   render() {
     return (
       <div  className={styles.post_conteiner}>    
-      <Post data={db[0]}/>
+      db.map (...i => {<Post key={i} data={db[i]}/>})
+      {/* <Post data={db[0]}/>
       <Post data={db[1]} />
-      <Post data={db[2]} />
+      <Post data={db[2]} /> */}
       </div>
     )
   }
