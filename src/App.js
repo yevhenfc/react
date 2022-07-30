@@ -7,7 +7,8 @@ import React, { Component } from 'react'
 // import CounterFun from './Components/CounterFun'
 // import ManagedContest from './Components/ManagedContest'
 //import CountClick from './Components/CountClick'
-import ClockMatrix from './Components/ClockMatrix'
+// import ClockMatrix from './Components/ClockMatrix'
+import RangeParent from './sandbox/RangeParent'
 
 // const testUser = {
 //   id: 1,
@@ -19,8 +20,7 @@ export default class App extends Component {
   render() {
     return (
       <>
- 
-        <ClockMatrix />
+        <RangeParent />
       </>
     )
   }
