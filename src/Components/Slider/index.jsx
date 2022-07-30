@@ -11,7 +11,7 @@ export default function Slider(props) {
   
     return (
     <div className={styles.container}>
-        <Slide images = {images} currnetImgId = {currnetImgId} fullScreen = {fullScreen} />
+        <Slide images = {images} currnetImgId = {currnetImgId} />
         <Controller setPrevSlide={setPrevSlide} setNextSlide={setNextSlide} />
 
     </div>
