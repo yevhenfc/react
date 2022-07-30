@@ -6,7 +6,8 @@ import React, { Component } from 'react'
 // import ReactPosts from './Components/ReactPosts'
 // import CounterFun from './Components/CounterFun'
 // import ManagedContest from './Components/ManagedContest'
-import CountClick from './Components/CountClick'
+//import CountClick from './Components/CountClick'
+import Test from './Components/Test'
 
 // const testUser = {
 //   id: 1,
@@ -19,7 +20,7 @@ export default class App extends Component {
     return (
       <>
  
-        <CountClick />
+        <Test />
       </>
     )
   }

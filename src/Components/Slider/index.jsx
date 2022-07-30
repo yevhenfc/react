@@ -2,6 +2,7 @@ import React, {useState}  from 'react'
 import PropTypes from 'prop-types';
 import Controller from './Controller';
 import styles from './Slider.module.scss';
+import Slide from './Slide';
 
 export default function Slider(props) {
     const {images} = props;
