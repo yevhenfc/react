@@ -1,38 +1,22 @@
-import React, { useState} from 'react'
-import styles from './Test.module.scss'
+import React, { useEffect, useState } from 'react'
 
 export default function Test() {
-  const [width, setWidth] = useState(0);
-  const [height, setHeight] = useState(0);
-//   const [inlineStyle, setInlineStyle] = useState(null);  
+  const[w, setW] = useState(window.innerWidth);
+  const[h, setH] = useState(window.innerHeight);
+  const [inlineStyle, setInlineStyle] = useState(null);
 
-  const widthHandler  = (e) => {setWidth(e.target.value)}
-  const heightHandler = (e) => {setHeight(e.target.value)}  
-  const inlineStyle = ({  
-            width:  `${width}px`,
-            height: `${height}px`
-          })
+  useEffect( () => {
+    window.addEventListener('resize',() =>{
+        setW(window.innerWidth);
+        setH(window.innerHeight);
+    })
+  }
+  )
 
-  //   const rerenderBox = () => {
-//     setInlineStyle({  
-//         width:  `${width}px`,
-//         height: `${height}px`
-//       })
-//     }
-
-//   useEffect(() => {
-//     setInlineStyle({  
-//         width:  `${width}px`,
-//         height: `${height}px`
-//       });
-//   }, [inlineStyle]);
-
-  return (
-  <>
-  <input type="text" value={width}  onChange={widthHandler} />
-  <input type="text" value={height} onChange={heightHandler} />
-  {/* <button onClick={rerenderBox}>rerender</button> */}
-  <div className={styles.box} style = {inlineStyle}></div>
-  </>  
+return (
+    <>
+        <p>width {w}</p>
+        <p>height {h}</p>
+    </>
   )
 }
