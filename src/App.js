@@ -5,7 +5,8 @@ import React, { Component } from 'react'
 // import SignInForm from './Components/SignInForm'
 // import ReactPosts from './Components/ReactPosts'
 // import CounterFun from './Components/CounterFun'
-import ClockFun from './Components/ClockFun'
+// import ManagedContest from './Components/ManagedContest'
+import CountClick from './Components/CountClick'
 
 // const testUser = {
 //   id: 1,
@@ -18,7 +19,7 @@ export default class App extends Component {
     return (
       <>
  
-        <ClockFun />
+        <CountClick />
       </>
     )
   }
