@@ -1,0 +1,11 @@
+.passwordValid{
+    border: 2px sold green;
+}
+
+.passwordInvalid{
+    border: 2px sold red;    
+}
+
+.input{
+    margin: auto;
+}
