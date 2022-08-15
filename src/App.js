@@ -8,7 +8,8 @@ import React, { Component } from 'react'
 // import ManagedContest from './Components/ManagedContest'
 //import CountClick from './Components/CountClick'
 // import ClockMatrix from './Components/ClockMatrix'
-import RangeParent from './sandbox/RangeParent'
+//import RangeParent from './sandbox/RangeParent'
+import Counter from './Components/Counter'
 
 // const testUser = {
 //   id: 1,
@@ -17,10 +18,23 @@ import RangeParent from './sandbox/RangeParent'
 // }
 
 export default class App extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      step: 1,
+    }
+  }
+  
+  handleStep = e => {
+    this.setState({step: Number(e.target.value)});
+  }
+
   render() {
+    const {step} = this.state;
     return (
       <>
-        <RangeParent />
+        <input type="number" value={step} onChange={this.handleStep}></input>
+        <Counter step={step}/>
       </>
     )
   }

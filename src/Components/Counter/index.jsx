@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
+import React, { Component, PureComponent } from 'react'
 import InnerCounter from '../InnerCounter'
 import PropTypes from 'prop-types';
 
-export default class Counter extends Component {
+export default class Counter extends PureComponent {
   constructor(props) {
     super(props)
       this.state = {
@@ -27,17 +27,25 @@ export default class Counter extends Component {
     this.setState({value: newValue});
   }
 
+  shouldComponentUpdate(nextProps, nextState){
+    const {value} = this.state;
+    const {step}  = this.props;
+  console.log(nextProps, nextState);
+  return value !== nextState.value && step !== nextProps.step;
+  };
+
   render() {
     const {value} = this.state;
+    console.log('counter');
     return (
       <>
         <h2>Counter {this.state.value}</h2>
         <button onClick={this.inc}> + </button>
         <button onClick={this.dec}> - </button>
-        <InnerCounter 
+        {/* <InnerCounter 
           value={this.state.value}
-          NewValueHandler = {this.NewValueHandler}
-        />
+          NewValueHandler = {this.NewValueHandler} 
+        />*/}
       </>
     )
   }
