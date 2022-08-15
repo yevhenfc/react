@@ -9,7 +9,13 @@ import React, { Component } from 'react'
 //import CountClick from './Components/CountClick'
 // import ClockMatrix from './Components/ClockMatrix'
 //import RangeParent from './sandbox/RangeParent'
-import Counter from './Components/Counter'
+import Counter from './Components/Counter';
+
+
+import { StepContext } from './Contexts';
+// import { createContext } from 'react';
+// const stepContext = createContext();
+
 
 // const testUser = {
 //   id: 1,
@@ -32,10 +38,15 @@ export default class App extends Component {
   render() {
     const {step} = this.state;
     return (
-      <>
-        <input type="number" value={step} onChange={this.handleStep}></input>
-        <Counter step={step}/>
-      </>
+      <StepContext.Provider value={step}>
+        <Counter />
+     
+      </StepContext.Provider>
+    
+      // <>
+      //   <input type="number" value={step} onChange={this.handleStep}></input>
+      //   <Counter step={step}/>
+      // </>
     )
   }
 }
