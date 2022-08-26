@@ -27,32 +27,46 @@ export default function App() {
 */
 
 // import LoadUsers from './Components/LoadUsers';
-import React, { Component }  from 'react';
+import React  from 'react';
 import axios from 'axios';
 
 const options = {
-  results: 5,
+  results: 10,
   seed: 'PD2022',
   page: 1,
 }
 
 function loadRandomUsersFetch({results, seed, page}){
   fetch(`https://randomuser.me/api/?results=${results}&seed=${seed}&page=${page}`)
-  .then( (response) => response.json())
+  .then( (response) => {
+    if (!response.ok) throw Error(response.statusText);
+    response.json();
+    // console.log(response.json());
+  })
   .then ( ({results})  => console.dir(results))
   .catch( (error) => console.log(error))
 }
 
+const configAxios = {
+  timeout: 1000,
+  inDownloadPogress: (event) => console.log(event),
+  onUploadPogress:   (event) => console.log(event)
+}
 
 function loadRandomUsersAxios({results, seed, page}){
-  axios.get(`https://randomuser.me/api/?results=${results}&seed=${seed}&page=${page}`)
-  .then( (response) => console.log(response.data.results))
+  axios.get(`https://randomuser.me/api/?results=${results}&seed=${seed}&page=${page}`
+    ,configAxios
+    )
+  .then( (response) => {
+    console.log('Axios')
+    console.log(response.data.results)
+  })
   .catch( (error) => console.log(error))
 }
 
 
 function App(){
-  loadRandomUsersFetch(options);
+  // loadRandomUsersFetch(options);
   loadRandomUsersAxios(options);
   return (
     <>
