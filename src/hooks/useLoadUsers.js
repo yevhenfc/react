@@ -15,15 +15,11 @@ function useLoadUsers(loadFun) {
   
   useEffect( () => {
     setIsFetching(true);
-    try {
-        setData(loadFun())
-    } catch (error) {
-        setIsError(true);
-    } finally {
-        setIsFetching(false);
-    }
-  }, []);
-  
+    loadFun()
+    .then((data)   => setData(data.results))
+    .catch((error) => setIsError(true))
+    .finally(()    => {setIsFetching(false)})
+    }, []);
   return {data, isFetching, isError};
 }
 
